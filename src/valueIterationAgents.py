@@ -43,26 +43,23 @@ class ValueIterationAgent(ValueEstimationAgent):
         self.iterations = iterations
         self.values = util.Counter() # A Counter is a dict with default 0
 
-        # Write value iteration code here
-        stateList = self.mdp.getStates()
-        lastValues = self.values.copy()
-        for iter in range(self.iterations):
+        # VALUE ITERATION DEFINITION HERE 
 
+        stateList = self.mdp.getStates()
+        lastValues = self.values.copy() # we always use the values of the last iteration
+        for iter in range(self.iterations):
             for state in stateList:
-                expectedActionValues = util.Counter()
+                expectedActionValues = util.Counter() # a counter for the value of each action
                 for action in self.mdp.getPossibleActions(state):
                     for nextState, probs in self.mdp.getTransitionStatesAndProbs(state, action):
-
                         reward = self.mdp.getReward(state, action, nextState)
                         QValue = lastValues[nextState]
                         expectedActionValues[action] +=  probs*(reward + self.discount*QValue)
-
                 if self.mdp.isTerminal(state):
                     self.values[state] = 0
                 else:
                     bestAction = expectedActionValues.argMax()
                     self.values[state] = expectedActionValues[bestAction]
-
             lastValues = self.values.copy() 
 
     def getValue(self, state):
