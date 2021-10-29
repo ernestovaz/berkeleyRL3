@@ -99,13 +99,12 @@ class QLearningAgent(ReinforcementAgent):
         action = None
         
         if len(legalActions) > 0:
-            selected = False
+        
             candidate_action = random.choice(getLegalActions(state))
-            selected = util.flipCoin(self.epsilon)
-            if selected:
+            if util.flipCoin(self.epsilon)
                 action = candidate_action
             else:
-                action = computeActionFromQValues(self, stat)
+                action = computeActionFromQValues(state)
         
 
         return action
