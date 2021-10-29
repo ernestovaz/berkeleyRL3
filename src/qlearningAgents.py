@@ -50,8 +50,7 @@ class QLearningAgent(ReinforcementAgent):
           Should return 0.0 if we have never seen a state
           or the Q node value otherwise
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        return self.qVals[(state, action)]
 
 
     def computeValueFromQValues(self, state):
