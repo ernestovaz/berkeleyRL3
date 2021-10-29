@@ -1,7 +1,7 @@
 # berkeleyRL3
 Para a versão em Português, siga [este link](https://github.com/andertavares/berkeleyRL3/blob/main/README.pt-br.md).
 
-Python 3 port of the Berkeley Reinforcement Learning assignment. Original material, written in Python 2, is at http://ai.berkeley.edu/reinforcement.html.
+Under work assignment in Python 3 port of the Berkeley Reinforcement Learning. Original material, written in Python 2, is at http://ai.berkeley.edu/reinforcement.html.
 
 The code has been ported from python 2 to 3 with the 2to3 utilitary and some manual tweaks involving tk and integer division. Preliminary manual tests were ok, but some issues might still be there. Feedback and pull requests are welcome!
 
